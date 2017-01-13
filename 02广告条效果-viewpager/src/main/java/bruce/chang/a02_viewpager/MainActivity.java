@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.c,
             R.drawable.d,
             R.drawable.e};
-
     /**
      * 上一次高亮显示的位置
      */
