@@ -1,6 +1,8 @@
 package bruce.chang.testcustomview.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
 
 /**
  * Created by: BruceChang
@@ -26,5 +28,50 @@ public class DensityUtil {
     public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+    }
+
+
+    /**
+     * 获取屏幕的宽
+     *
+     * @param activity
+     * @return
+     */
+    public final static int getWindowsWidth(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
+    }
+
+    /**
+     * 获取屏幕的高
+     *
+     * @param activity
+     * @return
+     */
+    public final static int getWindowsHeight(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        return dm.heightPixels;
+    }
+
+    /**
+     * 得到屏幕宽度
+     * @param context
+     * @return
+     */
+    public static int getWinWidth(Activity context) {
+        // TODO Auto-generated constructor stub
+        return context.getWindowManager().getDefaultDisplay().getWidth();
+    }
+
+    /**
+     * 得到屏幕高度
+     * @param context
+     * @return
+     */
+    public static int getWinHight(Activity context) {
+        // TODO Auto-generated constructor stub
+        return context.getWindowManager().getDefaultDisplay().getHeight();
     }
 }
